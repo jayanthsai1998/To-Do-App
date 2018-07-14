@@ -1,6 +1,10 @@
 # To-Do-App
-@ paste the items to be reminded
+@ pastes the items to be reminded
 
-Here the user can create item lists of a particular reminder
+It is a web application.
 
-And in the list, the user can add items to be reminded.
+Authentication is made up for login/signup to app.
+
+Here the user can create item lists of a particular criteria.
+
+And in each list, the user can add/delete any number of items in the created lists.
