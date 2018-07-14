@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <br>
+        <input class="btn btn-primary" type="submit" value="
+        {% if edit %}
+        Edit Todo List
+        {% else %}
+        Add Todo List
+        {% endif %}
+        ">
+    </form>
+</div>
+<br>
+{% endblock %}

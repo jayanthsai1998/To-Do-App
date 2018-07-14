@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    {% if error %}
+    <h3 style="color:red; text-align:center;">There was an error in signing up</h3>
+    <br>
+    {% endif %}
+    <form method="post">
+        <legend>User sign up</legend>
+        {% csrf_token %}
+        {{form}}
+        <br>
+        <input class="btn btn-primary" type="submit" value="Sign up">
+    </form>
+</div>
+{% endblock %}

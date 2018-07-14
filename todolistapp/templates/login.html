@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    {% if error %}
+    <div class="container" style="text-align:center">
+        <h1 style="color:red">There was an error in signing in</h1>
+    </div>
+    {% endif %}
+    <br>
+    <legend>User login</legend>
+    <form method="post">
+        {% csrf_token %}
+        {{form}}
+        <br>
+        <span>
+            <input class="btn btn-primary" type="submit" value="Login">
+            <a class="btn btn-secondary" href="{% url "signup" %}">Sign up here</a>
+        </span>
+    </form>
+</div>
+{% endblock %}

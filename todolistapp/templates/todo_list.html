@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <legend>TODO Lists</legend>
+    <a href="{% url "add_todolist" %}">Add new list +</a>
+    <table class="table">
+        <tr>
+            <th>List name</th>
+            <th>No. of items</th>
+            <th>Operations</th>
+        </tr>
+        {% for todolist in todolists %}
+        <tr>
+            <td>
+                <a href="{% url "todolistitem_list" todolist.list.id %}">
+                    {{ todolist.list.name }}
+                </a>
+            </td>
+            <td>{{ todolist.count }}</td>
+            <td>
+                <a href="{% url "edit_todolist" todolist.list.id %}">Edit </a>
+                |
+                <a href="{% url "delete_todolist" todolist.list.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
